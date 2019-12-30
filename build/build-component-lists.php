@@ -4,33 +4,42 @@ declare(strict_types=1);
 
 const PROJECT_INFO = [
     'mezzio' => [
-        'title' => 'Mezzio: PSR-15 Middleware in Minutes',
-        'file' => 'data/component-list.mezzio.json',
+        'title'    => 'Mezzio',
+        'subtitle' => 'PSR-15 Middleware in Minutes',
+        'file'     => 'data/component-list.mezzio.json',
     ],
 ];
 
+const GROUP_TEMPLATE = <<< 'END'
+<h4>{name}</h4>
+<div class="row row-cols-1 row-cols-md-2">
+{packages}
+</div>
+END;
+
 const CARD_TEMPLATE = <<< 'END'
-    <div class="col mb-4">
+<div class="col mb-4">
+    <a href="{url}">
         <div class="card h-100">
-            <div class="card-header bg-mezzio text-white">
+            <div class="card-header">
                 {package}
             </div>
             <div class="card-body">
-                <h5 class="card-title"><a href="{url}">{name}</a></h5>
+                <h5 class="card-title">{name}</h5>
                 <p class="card-text">{description}</p>
             </div>
         </div>
-    </div>
+    </a>
+</div>
 
 END;
 
 const DECK_TEMPLATE = <<< 'END'
-<h3 class="text-mezzio">Mezzio: PSR-15 Middleware in Minutes</h3>
-<div class="row row-cols-1 row-cols-md-3">
-{packages}
-</div>
-
-
+<h3 class="display-4">Documentation of Mezzio<br>
+    <small class="text-muted">PSR-15 Middleware in Minutes</small>
+</h3>
+<hr>
+{content}
 END;
 
 function preparePackage(array $package) : string
@@ -43,13 +52,41 @@ function preparePackage(array $package) : string
     return $card;
 }
 
+function prepareGroup(string $name, array $packages) : string
+{
+    $htmlBlocks = array_map(static function ($package) {
+        return preparePackage($package);
+    }, $packages);
+
+    return str_replace(
+        [
+            '{name}',
+            '{packages}',
+            '<h4></h4>',
+        ],
+        [
+            $name,
+            implode("\n", $htmlBlocks),
+            '',
+        ],
+        GROUP_TEMPLATE
+    );
+}
+
 function prepareProject(array $project) : string
 {
-    $packages = array_map(function ($package) {
-        return preparePackage($package);
-    }, $project);
+    $groupedPackages = [];
+    foreach ($project as $package) {
+        $groupedPackages[$package['group']][] = $package;
+    }
+    ksort($groupedPackages);
 
-    return str_replace('{packages}', implode("\n", $packages), DECK_TEMPLATE);
+    $html = '';
+    foreach ($groupedPackages as $group => $packages) {
+        $html .= prepareGroup($group, $packages);
+    }
+
+    return str_replace('{content}', $html, DECK_TEMPLATE);
 }
 
 function fetchProject(string $file) : array
@@ -71,6 +108,6 @@ function injectProjectContent(string $content, string $file) : void
 
 chdir(dirname(__DIR__));
 
-$content = prepareProject(fetchProject('data/component-list.mezzio.json'));
+$content = prepareProject(fetchProject(PROJECT_INFO['mezzio']['file']));
 
 injectProjectContent($content, './index.html');
