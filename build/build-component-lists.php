@@ -11,7 +11,7 @@ const PROJECT_INFO = [
 ];
 
 const GROUP_TEMPLATE = <<< 'END'
-<h4>{name}</h4>
+<h4 id="{anchor}">{name}</h4>
 <div class="row row-cols-1 row-cols-md-2">
 {packages}
 </div>
@@ -39,8 +39,23 @@ const DECK_TEMPLATE = <<< 'END'
     <small class="text-muted">PSR-15 Middleware in Minutes</small>
 </h3>
 <hr>
+{toc}
 {content}
 END;
+
+const TOC = <<< 'END'
+<div class="toc">
+    <h6 class="toc__headline">On this page</h6>
+    <ul class="toc__list">{items}</ul>
+</div>
+END;
+
+const TOC_ITEM = <<< 'END'
+<li class="toc__entry">
+    <a href="#{anchor}" class="toc__link nav-link">{name}</a>
+</li>
+END;
+
 
 function preparePackage(array $package) : string
 {
@@ -62,11 +77,13 @@ function prepareGroup(string $name, array $packages) : string
         [
             '{name}',
             '{packages}',
-            '<h4></h4>',
+            '{anchor}',
+            '<h4 id=""></h4>',
         ],
         [
             $name,
             implode("\n", $htmlBlocks),
+            filterAnchorName($name),
             '',
         ],
         GROUP_TEMPLATE
@@ -75,18 +92,24 @@ function prepareGroup(string $name, array $packages) : string
 
 function prepareProject(array $project) : string
 {
-    $groupedPackages = [];
-    foreach ($project as $package) {
-        $groupedPackages[$package['group']][] = $package;
-    }
-    ksort($groupedPackages);
+    $groupedPackages = groupPackages($project);
 
     $html = '';
     foreach ($groupedPackages as $group => $packages) {
         $html .= prepareGroup($group, $packages);
     }
 
-    return str_replace('{content}', $html, DECK_TEMPLATE);
+    return str_replace(
+        [
+            '{content}',
+            '{toc}',
+        ],
+        [
+            $html,
+            createTableOfContents($project)
+        ],
+        DECK_TEMPLATE
+    );
 }
 
 function fetchProject(string $file) : array
@@ -104,6 +127,57 @@ function injectProjectContent(string $content, string $file) : void
         $homepage
     );
     file_put_contents($file, $replacement);
+}
+
+function groupPackages(array $project) : array
+{
+    $groupedPackages = [];
+    foreach ($project as $package) {
+        $groupedPackages[$package['group']][] = $package;
+    }
+    ksort($groupedPackages);
+
+    return $groupedPackages;
+}
+
+function createTableOfContents(array $project) : string
+{
+    $groupedPackages = groupPackages($project);
+
+    $html = '';
+    foreach ($groupedPackages as $group => $packages) {
+        if (empty($group)) {
+            continue;
+        }
+
+        $html .= prepareTocItem($group);
+    }
+
+    return str_replace(
+        '{items}',
+        $html,
+        TOC
+    );
+}
+
+function prepareTocItem(string $name) : string
+{
+    return str_replace(
+        [
+            '{anchor}',
+            '{name}',
+        ],
+        [
+            filterAnchorName($name),
+            $name,
+        ],
+        TOC_ITEM
+    );
+}
+
+function filterAnchorName(string $name) : string
+{
+    return str_replace(' ', '-', strtolower($name));
 }
 
 chdir(dirname(__DIR__));
