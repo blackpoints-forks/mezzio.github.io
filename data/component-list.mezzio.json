@@ -110,5 +110,12 @@
     "url": "https://docs.mezzio.dev/mezzio-problem-details/",
     "group": "API",
     "description": "PSR-7 Problem Details for HTTP API responses and middleware."
+  },
+  {
+    "name": "CORS",
+    "package": "mezzio/mezzio-cors",
+    "url": "https://docs.mezzio.dev/mezzio-cors/",
+    "group": "",
+    "description": "CORS Middleware to provide project- or route-specific CORS configurations."
   }
 ]
