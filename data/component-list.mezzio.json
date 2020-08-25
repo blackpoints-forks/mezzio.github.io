@@ -115,7 +115,7 @@
     "name": "CORS",
     "package": "mezzio/mezzio-cors",
     "url": "https://docs.mezzio.dev/mezzio-cors/",
-    "group": "",
+    "group": "Authorization",
     "description": "CORS Middleware to provide project- or route-specific CORS configurations."
   }
 ]
