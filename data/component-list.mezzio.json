@@ -3,7 +3,7 @@
     "name": "Mezzio",
     "package": "mezzio/mezzio",
     "url": "https://docs.mezzio.dev/mezzio/",
-    "group": "",
+    "group": " Microframework",
     "description": "PSR-7 middleware in minutes."
   },
   {
@@ -66,7 +66,7 @@
     "name": "Swoole support for Mezzio",
     "package": "mezzio/mezzio-swoole",
     "url": "https://docs.mezzio.dev/mezzio-swoole/",
-    "group": "",
+    "group": "Swoole",
     "description": "Support of Swoole into an Mezzio application."
   },
   {

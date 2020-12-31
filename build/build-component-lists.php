@@ -11,14 +11,14 @@ const PROJECT_INFO = [
 ];
 
 const GROUP_TEMPLATE = <<< 'END'
-<h4 id="{anchor}">{name}</h4>
-<div class="row row-cols-1 row-cols-md-2">
+<h3 id="{anchor}">{name}</h3>
+<div class="row row-cols-1">
 {packages}
 </div>
 END;
 
 const CARD_TEMPLATE = <<< 'END'
-<div class="col mb-4">
+<div class="col mb-2">
     <div class="card h-100">
         <a href="{url}">
             <div class="card-header">
@@ -35,18 +35,26 @@ const CARD_TEMPLATE = <<< 'END'
 END;
 
 const DECK_TEMPLATE = <<< 'END'
-<h3 class="display-4">Documentation of Mezzio<br>
-    <small class="text-muted">PSR-15 Middleware in Minutes</small>
-</h3>
-<hr>
+<h1>Documentation of Mezzio<br>
+    <small>PSR-15 Middleware in Minutes</small>
+</h1>
 {toc}
 {content}
 END;
 
 const TOC = <<< 'END'
-<div class="toc">
-    <h6 class="toc__headline">On this page</h6>
-    <ul class="toc__list">{items}</ul>
+<div class="toc__container">
+    <div class="toc">
+        <h6 class="toc__headline">On this page</h6>
+        <ul class="toc__list">{items}</ul>
+    </div>
+    <div class="donation-banner">
+        <a href="https://getlaminas.org/support/">
+            <h2>Donate</h2>
+            <p>Support Laminas Developers Directly</p>
+            <img src="https://funding.communitybridge.org/assets/cb-f-horizontal-white.svg">
+        </a>
+    </div>
 </div>
 END;
 
@@ -135,6 +143,7 @@ function groupPackages(array $project) : array
     foreach ($project as $package) {
         $groupedPackages[$package['group']][] = $package;
     }
+    var_dump($groupedPackages);
     ksort($groupedPackages);
 
     return $groupedPackages;
@@ -183,5 +192,5 @@ function filterAnchorName(string $name) : string
 chdir(dirname(__DIR__));
 
 $content = prepareProject(fetchProject(PROJECT_INFO['mezzio']['file']));
-
-injectProjectContent($content, './index.html');
+// var_dump($content);
+injectProjectContent($content, './documentation.html');

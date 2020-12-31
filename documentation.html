@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Overview of the Mezzio packages.">
+    <link rel="shortcut icon" href="https://docs.laminas.dev/img/trademark-laminas-foundation-rgb.svg">
+    <title>Mezzio Documentation</title>
+    <link rel="stylesheet" href="https://docs.laminas.dev/css/styles.css">
+    <link rel="stylesheet" href="http://0.0.0.0:8005/css/laminas-theme.css">
+</head>
+<body id="page-top" class="mezzio mezzio-overview overview preload" data-spy="scroll" data-target=".toc" data-offset="120">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="logo-link navbar-brand" href="https://getlaminas.org/" data-tooltip data-placement="bottom" title="Go to the Laminas homepage">
+            <img src="https://docs.laminas.dev/img/laminas-foundation-white.svg" height="28" alt="Laminas">
+        </a>
+        <a class="navbar-title" href="https://docs.laminas.dev/" data-tooltip
+           data-placement="bottom" title="Go to the Laminas Documentation">
+            Documentation
+        </a>
+
+        <button type="button"
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="dropdown sub-project-selector">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                            All Docs
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a href="https://docs.mezzio.dev/" class="dropdown-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 col-sm-12">
+                                        <img src="https://docs.laminas.dev/img/laminas-mezzio-rgb.svg" alt="Mezzio">
+                                    </div>
+                                    <div class="col-md-8 col-sm-12">
+                                        <strong>Mezzio</strong><br>
+                                        PSR-15 Middleware in Minutes
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://docs.laminas.dev/components/" class="dropdown-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 col-sm-12">
+                                        <img src="https://docs.laminas.dev/img/laminas-components-rgb.svg" alt="Laminas Components">
+                                    </div>
+                                    <div class="col-md-8 col-sm-12">
+                                        <strong>Components</strong><br>
+                                        Components for Enterprise Applications
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://docs.laminas.dev/mvc" class="dropdown-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 col-sm-12">
+                                        <img src="https://docs.laminas.dev/img/laminas-mvc-rgb.svg" alt="Laminas MVC">
+                                    </div>
+                                    <div class="col-md-8 col-sm-12">
+                                        <strong>MVC</strong><br>
+                                        MVC for Enterprise Applications
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://api-tools.getlaminas.org/documentation" class="dropdown-item">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 col-sm-12">
+                                        <img src="https://docs.laminas.dev/img/laminas-api-tools-rgb.svg" alt="Laminas API Tools">
+                                    </div>
+                                    <div class="col-md-8 col-sm-12">
+                                        <strong>API Tools</strong><br>
+                                        Build RESTful APIs in Minutes
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item dropdown-item--secondardy" href="https://docs.laminas.dev/migration/">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8 offset-md-4 col-sm-12">
+                                        Migration to Laminas
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item dropdown-item--secondardy" href="https://docs.laminas.dev/tutorials/">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8 offset-md-4 col-sm-12">
+                                        Tutorials
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://getlaminas.org/participate" class="nav-link">Community</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <h1 class="header__title">
+                    <a href="index.html">Mezzio</a>
+                </h1>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="https://github.com/mezzio/" class="header__link header__link--github" title="Go to repository of Mezzio">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div role="main">
+<div class="container">
+    <div class="content">
+        <main>
+            <!-- START COMPONENT LISTS --><h1>Documentation of Mezzio<br>
+    <small>PSR-15 Middleware in Minutes</small>
+</h1>
+<div class="toc__container">
+    <div class="toc">
+        <h6 class="toc__headline">On this page</h6>
+        <ul class="toc__list"><li class="toc__entry">
+    <a href="#-microframework" class="toc__link nav-link"> Microframework</a>
+</li><li class="toc__entry">
+    <a href="#api" class="toc__link nav-link">API</a>
+</li><li class="toc__entry">
+    <a href="#authentication" class="toc__link nav-link">Authentication</a>
+</li><li class="toc__entry">
+    <a href="#authorization" class="toc__link nav-link">Authorization</a>
+</li><li class="toc__entry">
+    <a href="#session" class="toc__link nav-link">Session</a>
+</li><li class="toc__entry">
+    <a href="#swoole" class="toc__link nav-link">Swoole</a>
+</li></ul>
+    </div>
+    <div class="donation-banner">
+        <a href="https://getlaminas.org/support/">
+            <h2>Donate</h2>
+            <p>Support Laminas Developers Directly</p>
+            <img src="https://funding.communitybridge.org/assets/cb-f-horizontal-white.svg">
+        </a>
+    </div>
+</div>
+<h3 id="-microframework"> Microframework</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio/">
+            <div class="card-header">
+                mezzio/mezzio
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Mezzio</h5>
+                <p class="card-text">PSR-7 middleware in minutes.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><h3 id="api">API</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-hal/">
+            <div class="card-header">
+                mezzio/mezzio-hal
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">HAL for PSR-7</h5>
+                <p class="card-text">Hypertext Application Language (HAL) for PSR-7.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-problem-details/">
+            <div class="card-header">
+                mezzio/mezzio-problem-details
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Problem Details</h5>
+                <p class="card-text">PSR-7 Problem Details for HTTP API responses and middleware.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><h3 id="authentication">Authentication</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authentication/">
+            <div class="card-header">
+                mezzio/mezzio-authentication
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Authentication for Mezzio and PSR-7</h5>
+                <p class="card-text">Authentication middleware for Mezzio and PSR-7 applications.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authentication-basic/">
+            <div class="card-header">
+                mezzio/mezzio-authentication-basic
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">HTTP Basic Authentication for Mezzio and PSR-7</h5>
+                <p class="card-text">HTTP Basic Authentication adapter for mezzio-authentication.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authentication-session/">
+            <div class="card-header">
+                mezzio/mezzio-authentication-session
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Username/password authentication for mezzio-authentication</h5>
+                <p class="card-text">Username/password, session-backed authentication adapter for mezzio-authentication.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authentication-laminasauthentication/">
+            <div class="card-header">
+                mezzio/mezzio-authentication-laminasauthentication
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">laminas-authentication integration for Mezzio</h5>
+                <p class="card-text">laminas-authentication adapter for mezzio-authentication.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><h3 id="authorization">Authorization</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authorization/">
+            <div class="card-header">
+                mezzio/mezzio-authorization
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Authorization for Mezzio and PSR-7</h5>
+                <p class="card-text">Authorization middleware for Mezzio and PSR-7 applications.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authorization-acl/">
+            <div class="card-header">
+                mezzio/mezzio-authorization-acl
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">laminas-permissions-acl integration for Mezzio</h5>
+                <p class="card-text">ACL permission adapter for mezzio-authorization.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-authorization-rbac/">
+            <div class="card-header">
+                mezzio/mezzio-authorization-rbac
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">laminas-permissions-rbac integration for Mezzio</h5>
+                <p class="card-text">RBAC permission adapter for mezzio-authorization.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-cors/">
+            <div class="card-header">
+                mezzio/mezzio-cors
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">CORS</h5>
+                <p class="card-text">CORS Middleware to provide project- or route-specific CORS configurations.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><h3 id="session">Session</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-csrf/">
+            <div class="card-header">
+                mezzio/mezzio-csrf
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">CSRF</h5>
+                <p class="card-text">CSRF token generation and validation for PSR-7 and Mezzio applications.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-flash/">
+            <div class="card-header">
+                mezzio/mezzio-flash
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Flash</h5>
+                <p class="card-text">Flash messages for PSR-7 and Mezzio applications.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-session/">
+            <div class="card-header">
+                mezzio/mezzio-session
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">PSR-7 Sessions</h5>
+                <p class="card-text">Session container and middleware PSR-7 and Mezzio applications.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-session-cache/">
+            <div class="card-header">
+                mezzio/mezzio-session-cache
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">PSR-7 Sessions via PSR-6 Cache Item Pools</h5>
+                <p class="card-text">PSR-6 session persistence adapter for mezzio-session.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-session-ext/">
+            <div class="card-header">
+                mezzio/mezzio-session-ext
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">PSR-7 Sessions via ext-session</h5>
+                <p class="card-text">PHP ext-session persistence for PSR-7 sessions.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><h3 id="swoole">Swoole</h3>
+<div class="row row-cols-1">
+<div class="col mb-2">
+    <div class="card h-100">
+        <a href="https://docs.mezzio.dev/mezzio-swoole/">
+            <div class="card-header">
+                mezzio/mezzio-swoole
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Swoole support for Mezzio</h5>
+                <p class="card-text">Support of Swoole into an Mezzio application.</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+</div><!-- END COMPONENT LISTS -->
+        </main>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a class="footer__button" href="#page-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Laminas</h5>
+                <ul>
+                    <li>Laminas Project <a href="https://getlaminas.org/">The new foundation for the community-supported, open source continuation of Zend Framework</a></li>
+                    <li>Laminas Components and MVC <a href="https://docs.laminas.dev/">Components and MVC for enterprise applications</a></li>
+                    <li>Mezzio <a href="https://docs.mezzio.dev/">PSR-15 middleware in minutes</a></li>
+                    <li>Laminas API Tools <a href="https://api-tools.getlaminas.org/">Build RESTful APIs in minutes</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="footer__headline">Support</h4>
+                <ul class="support__list">
+                    <li class="support__list-item">
+                        <a href="https://discourse.laminas.dev" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
+                    </li>
+                    <li class="support__list-item">
+                        <a href="https://laminas.dev/chat" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
+                    </li>
+                    <li class="support__list-item">
+                        <a href="https://github.com/laminas" class="support__link" title="Github"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li class="support__list-item">
+                        <a href="https://twitter.com/getlaminas" class="support__link" title="Twitter"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="support__list-item">
+                        <a href="https://getlaminas.org/blog/rss.xml" class="support__link" title="Blog feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                    <li class="support__list-item">
+                        <a href="https://getlaminas.org/security/feed" class="support__link" title="Security feed"><i class="fa fa-rss-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="footer__headline">Copyright</h4>
+                <p>
+                    &copy; 2020 <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+
+    <script>
+        let base_url = '/',
+            project  = "laminas",
+            siteName = 'Documentation';
+    </script>
+    <script src="https://docs.laminas.dev/js/scripts.js"></script>
+    <script src="http://0.0.0.0:8005/js/laminas-theme.js"></script>
+</body>
+</html>
