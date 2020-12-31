@@ -15,7 +15,7 @@
 ***********************************************************************************/
 :root{
     --primary-color: #009655;
-    --features-color: #ee7016
+    --secondary-color: #ee7016
 }
 /* global
 ***********************************************************************************/
@@ -107,7 +107,7 @@ main{
 main h2,
 main h3{
     color: var(--primary-color);
-
+    /* color: var(--body-color); */
 }
 main h2{
     font-size: 3rem;
@@ -120,22 +120,26 @@ main a:hover{
     text-decoration: none;
 }
 .chapter:not(:first-child){
-    border-top: 1px solid var(--features-color);
+    /* border-top: 1px solid var(--secondary-color); */
+    border-top: 1px solid var(--primary-color);
     padding-top: 50px;
     margin-top: 50px;
+}
+.features {
+    padding-top: 50px;
 }
 .features img{
     width: 100px;
     margin-bottom: 20px;
 }
 .features h3{
-    color: var(--features-color)
+    color: var(--secondary-color)
 }
 .features{
     text-align: center;
 }
 .features .row:first-child{
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
  .features h3,
 .features p{
