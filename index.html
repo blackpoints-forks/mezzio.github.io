@@ -20,8 +20,11 @@
                 >github</a
             >
             <a class="documentation-link" href="documentation.html"
-                >Documentation</a
+                >Mezzio Documentation</a
             >
+            <a class="documentation-link" href="https://docs.laminas.dev/"
+                >Laminas documentation </a
+            > 
             <h1>Mezzio</h1>
             <h2>Build your application in minutes.</h2>
             <div class="example-code">
@@ -93,46 +96,13 @@
                 <main class="col-sm-12">
                     <div class="description chapter">
                         <h2>
-                            Mezzio is a PHP micro framework based on PSR-15
-                            Middleware.
+                            PHP micro framework
                         </h2>
                         <p>
-                            It provides a very minimalist structure. Essentially
-                            all you have to become familiar with are five core
-                            components. These are:
-                        </p>
-                        <ul>
-                            <li>A DI container.</li>
-                            <li>A router.</li>
-                            <li>An error handler for development.</li>
-                            <li>
-                                A template engine (if you’re not creating an
-                                API).
-                            </li>
-                            <li>
-                                PSR-7 messages and PSR-15 middleware and request
-                                handlers.
-                            </li>
-                            <li>
-                                In many cases, these are provided for you by the
-                                skeleton, and do not require any additional
-                                knowledge on your part. Given that, you can
-                                quickly get up to speed with the framework and
-                                begin creating the application that you need. We
-                                believe that this approach — in contrast to the
-                                laminas-mvc approach — is more flexible and
-                                accommodating.
-                            </li>
-                        </ul>
-                        <p>
-                            What’s more, you can mix and match the types of
-                            applications that you create.
+                            Mezzio is a <a href="https://getlaminas.org/">Laminas project</a>, a community-supported, open source continuation of Zend Expressive to simply build web applications and APIs.
                         </p>
                         <p>
-                            Do you just need an API? Great; you can do that
-                            quite quickly.<br />
-                            Do you want an HTML-based front-end? That’s
-                            available too.
+                            Build PHP middleware applications, using the PSR-7 (HTTP Messages) and PSR-15 (HTTP Request Handlers) specifications, using a variety of routing and templating options, and the dependency injection container you prefer.
                         </p>
                         <p>
                             When building applications with Mezzio, you can make
@@ -144,92 +114,105 @@
                         </p>
                     </div>
                     <div class="features">
+                        <h2 style="text-align: left;">Features</h2>
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
-                                <img src="images/lambda.svg" alt="Middleware" />
-                                <h3>PSR-15 Middleware</h3>
-                                <p>
-                                    Create
-                                    <a
-                                        href="https://docs.laminas.dev/laminas-stratigility/middleware/"
-                                        >middleware</a
-                                    >
-                                    applications, using as many layers as you
-                                    want, and the architecture your project
-                                    needs.
-                                </p>
+                                <div class="card-content">
+                                    <img src="images/lambda.svg" alt="Middleware" />
+                                    <h3>PSR-15 Middleware</h3>
+                                    <p>
+                                        Create
+                                        <a
+                                            href="https://docs.laminas.dev/laminas-stratigility/middleware/"
+                                            >middleware</a
+                                        >
+                                        applications, using as many layers as you
+                                        want, and the architecture your project
+                                        needs.
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <img src="images/message.svg" alt="PSR-7" />
-                                <h3>PSR-7 HTTP Messages</h3>
-                                <p>
-                                    Built to consume
-                                    <a href="https://www.php-fig.org/psr/psr-7/"
-                                        >PSR-7</a
-                                    >!
-                                </p>
+                                <div class="card-content">
+                                    <img src="images/message.svg" alt="PSR-7" />
+                                    <h3>PSR-7 HTTP Messages</h3>
+                                    <p>
+                                        Built to consume
+                                        <a href="https://www.php-fig.org/psr/psr-7/"
+                                            >PSR-7</a
+                                        >!
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <img src="images/routing.svg" alt="Routing" />
-                                <h3>Routing</h3>
-                                <p>
-                                    Route requests to middleware using
-                                    <a href="v3/features/router/intro/"
-                                        >the routing library of your choice</a
-                                    >.
-                                </p>
+                                <div class="card-content">
+                                    <img src="images/routing.svg" alt="Routing" />
+                                    <h3>Routing</h3>
+                                    <p>
+                                        Route requests to middleware using
+                                        <a href="v3/features/router/intro/"
+                                            >the routing library of your choice</a
+                                        >.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
-                                <img
-                                    src="images/injection.svg"
-                                    alt="Dependency Injection"
-                                />
-                                <h3>Dependency Injection</h3>
-                                <p>
-                                    Make your code flexible and robust, using
-                                    the
-                                    <a href="v3/features/container/intro/"
-                                        >dependency injection container of your
-                                        choice</a
-                                    >.
-                                </p>
+                                <div class="card-content">
+                                    <img
+                                        src="images/injection.svg"
+                                        alt="Dependency Injection"
+                                    />
+                                    <h3>Dependency Injection</h3>
+                                    <p>
+                                        Make your code flexible and robust, using
+                                        the
+                                        <a href="v3/features/container/intro/"
+                                            >dependency injection container of your
+                                            choice</a
+                                        >.
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <img src="images/template.svg" alt="Templating" />
-                                <h3>Templating</h3>
-                                <p>
-                                    Create
-                                    <a href="v3/features/template/intro/"
-                                        >templated responses</a
-                                    >, using a variety of template engines.
-                                </p>
+                                <div class="card-content">
+                                    <img src="images/template.svg" alt="Templating" />
+                                    <h3>Templating</h3>
+                                    <p>
+                                        Create
+                                        <a href="v3/features/template/intro/"
+                                            >templated responses</a
+                                        >, using a variety of template engines.
+                                    </p>
+                                </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
-                                <img
-                                    src="images/error.svg"
-                                    alt="Error Handling"
-                                />
-                                <h3>Error Handling</h3>
-                                <p>
-                                    <a href="v3/features/error-handling/"
-                                        >Handle errors gracefully</a
-                                    >, using templated error pages,
-                                    <a href="https://filp.github.io/whoops/"
-                                        >whoops</a
-                                    >, or your own solution!
-                                </p>
+                                <div class="card-content">
+                                    <img
+                                        src="images/error.svg"
+                                        alt="Error Handling"
+                                    />
+                                    <h3>Error Handling</h3>
+                                    <p>
+                                        <a href="v3/features/error-handling/"
+                                            >Handle errors gracefully</a
+                                        >, using templated error pages,
+                                        <a href="https://filp.github.io/whoops/"
+                                            >whoops</a
+                                        >, or your own solution!
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="documentation chapter">
                         <h2>
-                            Mezzio PSR-15 Middlewares
+                            Available PSR-15 Middlewares
                         </h2>
                         <p>
-                            In addition of the Mezzio microframework, mezzio provide an ecosystem of packages to manage session, authentication, authorization, etc.
-                            These PSR-15 Middlewares and they are easily intregrated in your application even if you don't use the Mezzio microframwork.
+                            In addition of the Mezzio microframework, Mezzio provide an ecosystem of packages to manage session, authentication, authorization, etc.
+                            These are PSR-15 Middlewares and easily intregrated in your application even if you don't use the Mezzio microframwork.
                         </p>
                         <p>
                             You can get the list of all the middlewares in the <a href="documentation.html">documentation page</a>.
@@ -239,31 +222,38 @@
                         <h2>News</h2>
                         <ul>
                             <li>
-                                <p>
-                                    mezzio / mezzio-swoole - Release 3.1.1
-                                    <br />
-                                    @laminas-bot laminas-bot released this 2
-                                    days ago · 3 commits to 3.2.x since this
-                                    release
-                                </p>
+                                <a href="https://github.com/mezzio/mezzio-swoole">
+                                    <div class="news-header">
+                                        05.01.2021
+                                    </div>
+                                    <div class="news-body">
+                                        <h5 class="news-title">
+                                            mezzio / mezzio-swoole - Release 3.1.1
+                                        </h5>
+                                        <p class="news-text">
+                                            @laminas-bot laminas-bot released this 2
+                                            days ago · 3 commits to 3.2.x since this
+                                            release
+                                        </p>
+                                    </div>
+                                </a>
                             </li>
                             <li>
-                                <p>
-                                    mezzio / mezzio-swoole - Release 3.1.1
-                                    <br />
-                                    @laminas-bot laminas-bot released this 2
-                                    days ago · 3 commits to 3.2.x since this
-                                    release
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    mezzio / mezzio-swoole - Release 3.1.1
-                                    <br />
-                                    @laminas-bot laminas-bot released this 2
-                                    days ago · 3 commits to 3.2.x since this
-                                    release
-                                </p>
+                                <a href="https://github.com/mezzio/mezzio-swoole">
+                                    <div class="news-header">
+                                        05.01.2021
+                                    </div>
+                                    <div class="news-body">
+                                        <h5 class="news-title">
+                                            mezzio / mezzio-swoole - Release 3.1.1
+                                        </h5>
+                                        <p class="news-text">
+                                            @laminas-bot laminas-bot released this 2
+                                            days ago · 3 commits to 3.2.x since this
+                                            release
+                                        </p>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
