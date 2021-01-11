@@ -312,18 +312,15 @@ blockquote h3 {
 }
 /* documentation select
 *************************************************************************/
-.laminas-selector,
 .docs-selector{
     display: inline-block;
 }
-.laminas-selector .dropdown-toggle,
 .docs-selector .dropdown-toggle {
     padding: 8px 13px;
     background-color: var(--primary-color);
     border-color: rgba(255,255,255,0.3);
     color: #fff;
 }
-.laminas-selector .dropdown-menu,
 .docs-selector .dropdown-menu {
     color: #212529;
     border: 1px solid #efefef;
@@ -332,6 +329,12 @@ blockquote h3 {
 }
 .docs-selector .dropdown-item div{
     font-size: 0.75rem;
+}
+header h1{
+    margin-right: 10px;
+}
+header .btn-group{
+    margin-left: 5px;
 }
 /* overview
 *************************************************************************/
